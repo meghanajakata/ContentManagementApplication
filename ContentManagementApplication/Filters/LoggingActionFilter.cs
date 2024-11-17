@@ -37,7 +37,7 @@ namespace ContentManagementApplication.Filters
             var method = context.HttpContext.Request.Method;
             if (method == "POST")
             {
-                _logger.LogInformation("User {Username} successfully performed {Action} on {Controller} at {Timestamp}.",actionName, controllerName, DateTime.UtcNow);
+                _logger.LogInformation("User successfully performed {Action} on {Controller} at {Timestamp}.",actionName, controllerName, DateTime.UtcNow);
             }
 
         }

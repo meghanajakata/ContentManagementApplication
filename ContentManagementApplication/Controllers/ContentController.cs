@@ -18,6 +18,7 @@ namespace ContentManagementApplication.Controllers
 
         [HttpGet("GetAllContent")]
         [ServiceFilter(typeof(ExceptionFilter))]
+        [ServiceFilter(typeof(CacheResourceFilter))]
         public IEnumerable<Content> GetContents()
         {
             return contentRepository.GetContents();

@@ -17,6 +17,8 @@ namespace ContentManagementApplication
             builder.Services.AddScoped<IContentRepository, ContentRepository>();
             builder.Services.AddScoped<LoggingActionFilterAttribute>();
             builder.Services.AddScoped<ExceptionFilter>();
+            builder.Services.AddMemoryCache();
+            builder.Services.AddScoped<CacheResourceFilter>();
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
@@ -35,7 +37,7 @@ namespace ContentManagementApplication
 
             app.UseAuthentication();
             app.UseAuthorization();
-
+            
 
             app.MapControllers();
 
